@@ -1,26 +1,113 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #0f0a1e;
+  --foreground: #ffffff;
+  --team1-color: #f97316;
+  --team2-color: #22c55e;
+  --hex-empty: #1e1b3a;
+  --hex-border: #6d28d9;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --font-sans: var(--font-cairo);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-cairo), 'Cairo', 'Tajawal', Arial, sans-serif;
+  direction: rtl;
 }
+
+/* Hex cell hover glow */
+.hex-cell {
+  transition: filter 0.2s ease, transform 0.2s ease;
+  cursor: pointer;
+}
+.hex-cell:hover {
+  filter: brightness(1.3);
+  transform: scale(1.05);
+}
+
+/* Pulse animation for selected hex */
+@keyframes hexPulse {
+  0%, 100% { filter: brightness(1) drop-shadow(0 0 6px #a855f7); }
+  50%       { filter: brightness(1.4) drop-shadow(0 0 18px #a855f7); }
+}
+.hex-selected {
+  animation: hexPulse 1.2s ease-in-out infinite;
+}
+
+/* Timer ring animation */
+@keyframes timerShrink {
+  from { stroke-dashoffset: 0; }
+  to   { stroke-dashoffset: var(--timer-end); }
+}
+.timer-ring {
+  animation: timerShrink var(--timer-duration) linear forwards;
+}
+
+/* Celebration particles */
+@keyframes floatUp {
+  0%   { transform: translateY(0) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(-120px) rotate(360deg); opacity: 0; }
+}
+.particle {
+  animation: floatUp 1.5s ease-out forwards;
+}
+
+/* Smooth gradient background */
+.game-bg {
+  background: radial-gradient(ellipse at top, #1a0a3e 0%, #0f0a1e 60%, #060412 100%);
+  min-height: 100vh;
+}
+
+/* Glass card effect */
+.glass-card {
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 1rem;
+}
+
+/* Score badge */
+.score-badge {
+  border-radius: 9999px;
+  font-weight: 900;
+  font-size: 1.5rem;
+  width: 4rem;
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 24px currentColor;
+}
+
+/* Question letter display */
+.letter-display {
+  font-size: 4rem;
+  font-weight: 900;
+  text-shadow: 0 0 30px currentColor;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #1a1033; }
+::-webkit-scrollbar-thumb { background: #6d28d9; border-radius:3px; }
+
+/* Team color borders */
+.team1-border { border-color: var(--team1-color); box-shadow: 0 0 16px rgba(249,115,22,0.4); }
+.team2-border { border-color: var(--team2-color); box-shadow: 0 0 16px rgba(34,197,94,0.4); }
+
+/* Shake animation for wrong answer */
+@keyframes shake {
+  0%,100%{ transform: translateX(0); }
+  20%    { transform: translateX(-8px); }
+  40%    { transform: translateX(8px); }
+  60%    { transform: translateX(-6px); }
+  80%    { transform: translateX(6px); }
+}
+.shake { animation: shake 0.4s ease; }
