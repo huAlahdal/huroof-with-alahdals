@@ -1,99 +1,99 @@
 <div align="center">
 
-# حروف مع الاهدل
+# حروف مع الاهدل 🎮
 
-**An Arabic letter knowledge game played on a hexagonal board**
+**لعبة معرفية تفاعلية تعتمد على الحروف العربية في شبكة سداسية**
 
 [![Next.js](https://img.shields.io/badge/Next.js-16-black?style=flat-square&logo=next.js)](https://nextjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?style=flat-square&logo=typescript)](https://www.typescriptlang.org/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-v4-38bdf8?style=flat-square&logo=tailwindcss)](https://tailwindcss.com/)
 [![Framer Motion](https://img.shields.io/badge/Framer_Motion-latest-ff0055?style=flat-square&logo=framer)](https://www.framer.com/motion/)
 
-*Two teams compete to claim Arabic letters on a honeycomb grid by answering trivia questions. First to connect their edges wins.*
+*يتنافس فريقان للسيطرة على الحروف العربية عبر الإجابة على أسئلة معرفية — من يوصل طرفيه أولاً يفوز!*
 
 <br/>
 
-<img src="https://i.imgur.com/8NLODGN.png" width="100%" alt="Game Board" />
+<img src="https://i.imgur.com/8NLODGN.png" width="100%" alt="لوحة اللعبة" />
 
 </div>
 
 ---
 
-## Overview
+## نظرة عامة
 
-**حروف مع الاهدل** (Huroof with Al-Ahdal) is a multiplayer knowledge game designed for live events, classrooms, and social gatherings. A host controls the game from their laptop while teams buzz in from their phones — everything syncs in real time over a local network.
+**حروف مع الاهدل** لعبة معرفية جماعية مصممة للفعاليات الحية والفصول الدراسية والتجمعات. يتحكم المقدم باللعبة من جهازه بينما تضغط الفرق على الجرس من هواتفها — كل شيء يتزامن فوراً عبر الشبكة المحلية.
 
-The game is built on a **5×5 hexagonal grid** where each cell represents an Arabic letter. Answering a question correctly claims that cell for your team. The winning condition is inspired by the board game *Hex*: connect your two opposite sides before the other team connects theirs.
-
----
-
-## Features
-
-| Feature | Description |
-|---------|-------------|
-| 🔷 **Hexagonal Grid** | SVG-rendered 5×5 honeycomb with 25 Arabic letters |
-| 🟠🟢 **Two Teams** | Orange (horizontal path) vs Green (vertical path) |
-| 🧠 **180+ Questions** | Categorized by letter, with Easy / Medium / Hard difficulty |
-| 🔔 **Multi-Device Buzzer** | Teams buzz in from their phones — first press wins |
-| 🎛 **Presenter Panel** | Host controls questions, answers, awards, and buzzer from a separate device |
-| 🔄 **Replace Question** | Swap out a question if neither team can answer |
-| 📋 **Question Admin** | Add, edit, and delete custom questions in-browser |
-| 🏆 **Multi-Round Play** | Track scores across multiple rounds |
-| 📺 **Projector-Ready** | Large display mode with full-width question banner |
-| ✨ **Smooth Animations** | Framer Motion transitions throughout |
-| 🌐 **Full Arabic UI** | RTL layout with Cairo font |
+تعتمد اللعبة على **شبكة سداسية 5×5** حيث تمثل كل خلية حرفاً عربياً. الإجابة الصحيحة تمنح الفريق تلك الخلية. شرط الفوز مستوحى من لعبة *Hex* الشهيرة: وصّل طرفيك قبل أن يفعل الخصم.
 
 ---
 
-## How It Works — Win Condition
+## المميزات
 
-The game uses **Breadth-First Search (BFS)** to detect a winning connection after every cell claim:
-
-- 🟠 **Team Orange** — must form a connected chain from the **left edge** to the **right edge**
-- 🟢 **Team Green** — must form a connected chain from the **top edge** to the **bottom edge**
-
-The hexagonal grid makes diagonal paths possible, so both teams can block and outmaneuver each other.
-
----
-
-## Tech Stack
-
-| Technology | Role |
-|-----------|------|
-| [Next.js 16](https://nextjs.org/) (App Router) | Full-stack framework |
-| [TypeScript](https://www.typescriptlang.org/) | Type-safe codebase |
-| [Tailwind CSS v4](https://tailwindcss.com/) | Utility-first styling |
-| [Framer Motion](https://www.framer.com/motion/) | Animations |
-| [Zustand](https://zustand.docs.pmnd.rs/) | Client-side game state |
-| SVG | Hexagonal grid rendering |
-| Next.js API Route | Server-side buzzer sync (in-memory) |
+| الميزة | الوصف |
+|--------|-------|
+| 🔷 **شبكة سداسية** | خلايا بتصميم النحل — 25 حرفاً عربياً مرسومة بـ SVG |
+| 🟠🟢 **فريقان** | البرتقالي (مسار أفقي) ضد الأخضر (مسار عمودي) |
+| 🧠 **+180 سؤال** | مصنفة حسب الحرف بمستويات سهل / متوسط / صعب |
+| 🔔 **جرس متعدد الأجهزة** | كل فريق يضغط من هاتفه — أسرع ضغطة تفوز |
+| 🎛 **لوحة المقدم** | تحكم كامل بالأسئلة والإجابات والجرس والنتائج |
+| 🔄 **سؤال بديل** | استبدل السؤال إذا عجز الفريقان عن الإجابة |
+| 📋 **إدارة الأسئلة** | أضف وعدّل واحذف أسئلة مخصصة من المتصفح |
+| 🏆 **جولات متعددة** | تتبع النتائج عبر عدة جولات |
+| 📺 **وضع العرض الكبير** | شريط سؤال عريض مرئي من بعيد على البروجكتر |
+| ✨ **رسوم متحركة سلسة** | انتقالات بصرية باستخدام Framer Motion |
+| 🌐 **واجهة عربية كاملة** | تخطيط RTL مع خط Cairo |
 
 ---
 
-## Requirements
+## آلية الفوز
 
-- **Node.js** 18.0 or later
-- **npm**, **yarn**, or **pnpm**
+تستخدم اللعبة **خوارزمية BFS** للكشف عن الاتصال الفائز بعد كل مطالبة بخلية:
+
+- 🟠 **الفريق البرتقالي** — يجب تكوين سلسلة متصلة من **الحافة اليسرى** إلى **الحافة اليمنى**
+- 🟢 **الفريق الأخضر** — يجب تكوين سلسلة متصلة من **الحافة العلوية** إلى **الحافة السفلية**
+
+تتيح الشبكة السداسية مسارات قطرية، مما يمنح الفرق فرصاً للتحرك الاستراتيجي والحجب.
 
 ---
 
-## Installation & Running
+## التقنيات المستخدمة
+
+| التقنية | الدور |
+|---------|-------|
+| [Next.js 16](https://nextjs.org/) (App Router) | إطار العمل الشامل |
+| [TypeScript](https://www.typescriptlang.org/) | كود آمن النوع |
+| [Tailwind CSS v4](https://tailwindcss.com/) | تصميم بالأدوات المساعدة |
+| [Framer Motion](https://www.framer.com/motion/) | الرسوم المتحركة |
+| [Zustand](https://zustand.docs.pmnd.rs/) | إدارة حالة اللعبة |
+| SVG | رسم الشبكة السداسية |
+| Next.js API Route | مزامنة الجرس في الوقت الفعلي (ذاكرة الخادم) |
+
+---
+
+## المتطلبات
+
+- **Node.js** 18.0 أو أحدث
+- **npm** أو **yarn** أو **pnpm**
+
+---
+
+## التثبيت والتشغيل
 
 ```bash
-# 1. Clone the repository
+# 1. استنساخ المشروع
 git clone https://github.com/YOUR_USERNAME/hroofwithalahdal.git
 cd hroofwithalahdal
 
-# 2. Install dependencies
+# 2. تثبيت المكتبات
 npm install
 
-# 3. Start the development server
+# 3. تشغيل خادم التطوير
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) in your browser.
+افتح [http://localhost:3000](http://localhost:3000) في متصفحك.
 
-### Production Build
+### البناء للإنتاج
 
 ```bash
 npm run build
@@ -102,160 +102,160 @@ npm start
 
 ---
 
-## Project Structure
+## هيكل المشروع
 
 ```
 hroofwithalahdal/
 ├── app/
-│   ├── page.tsx                  # Home / game setup
-│   ├── game/page.tsx             # Main game display (projector screen)
-│   ├── admin/page.tsx            # Question management
-│   ├── presenter/page.tsx        # Host control panel
-│   ├── buzz/[team]/page.tsx      # Team buzzer (mobile)
-│   └── api/game-sync/route.ts   # Real-time sync API
+│   ├── page.tsx                  # الصفحة الرئيسية / إعداد اللعبة
+│   ├── game/page.tsx             # شاشة اللعبة الرئيسية (للبروجكتر)
+│   ├── admin/page.tsx            # إدارة الأسئلة
+│   ├── presenter/page.tsx        # لوحة تحكم المقدم
+│   ├── buzz/[team]/page.tsx      # جرس الفريق (للهاتف)
+│   └── api/game-sync/route.ts   # API المزامنة الفورية
 ├── components/
-│   ├── HexGrid.tsx               # SVG hexagonal grid + border indicators
-│   ├── ScoreBoard.tsx            # Team scores sidebar
-│   ├── SetupModal.tsx            # Pre-game configuration modal
-│   └── WinScreen.tsx             # Win celebration overlay
+│   ├── HexGrid.tsx               # الشبكة السداسية SVG + مؤشرات الحدود
+│   ├── ScoreBoard.tsx            # شريط نتائج الفريقين
+│   ├── SetupModal.tsx            # نافذة إعداد اللعبة
+│   └── WinScreen.tsx             # شاشة الاحتفال بالفوز
 └── lib/
-    ├── gameStore.ts              # Zustand game state & actions
-    ├── hexUtils.ts               # Hex math, BFS win detection
-    ├── questions.ts              # Built-in question database (180+)
-    └── buzzerState.ts            # Server-side buzzer singleton
+    ├── gameStore.ts              # حالة اللعبة وإجراءاتها (Zustand)
+    ├── hexUtils.ts               # حسابات الشبكة + كشف الفوز BFS
+    ├── questions.ts              # قاعدة بيانات الأسئلة (+180 سؤال)
+    └── buzzerState.ts            # حالة الجرس على الخادم
 ```
 
 ---
 
-## Routes
+## الصفحات والمسارات
 
-| Route | Purpose |
-|-------|---------|
-| `/` | Home — configure teams and start game |
-| `/game` | Game board — display on projector or TV |
-| `/presenter` | Host panel — manage questions, buzzer, and awards |
-| `/buzz/team1` | Buzzer for Team 1 (open on phone) |
-| `/buzz/team2` | Buzzer for Team 2 (open on phone) |
-| `/admin` | Question database management |
+| المسار | الغرض |
+|--------|-------|
+| `/` | الرئيسية — ضبط أسماء الفرق والبدء |
+| `/game` | لوحة اللعبة — تُعرض على البروجكتر أو التلفزيون |
+| `/presenter` | لوحة المقدم — إدارة الأسئلة والجرس والنتائج |
+| `/buzz/team1` | جرس الفريق الأول (يُفتح على الهاتف) |
+| `/buzz/team2` | جرس الفريق الثاني (يُفتح على الهاتف) |
+| `/admin` | إدارة قاعدة بيانات الأسئلة |
 
 ---
 
-## Multi-Device Setup
+## الإعداد متعدد الأجهزة
 
-The game is designed to run across **four devices simultaneously** on the same local network:
+اللعبة مصممة للعمل على **أربعة أجهزة في آنٍ واحد** على نفس الشبكة:
 
 ```
 ┌─────────────────────────────────────────────────────────┐
-│                    Same WiFi Network                     │
+│                     نفس شبكة الواي فاي                  │
 │                                                         │
-│  📺 Projector/TV          💻 Host Laptop               │
-│  /game                    /presenter                    │
-│  Shows grid + questions   Controls everything           │
+│  📺 البروجكتر / التلفزيون    💻 جهاز المقدم            │
+│  /game                        /presenter                │
+│  يعرض الشبكة والسؤال          يتحكم بكل شيء            │
 │                                                         │
-│  📱 Team 1 Phone          📱 Team 2 Phone              │
-│  /buzz/team1              /buzz/team2                   │
-│  Big buzzer button        Big buzzer button             │
+│  📱 هاتف الفريق الأول         📱 هاتف الفريق الثاني    │
+│  /buzz/team1                  /buzz/team2               │
+│  زر جرس كبير                  زر جرس كبير              │
 └─────────────────────────────────────────────────────────┘
 ```
 
-**Steps:**
-1. Run the server on one machine: `npm run dev` (or `npm start`)
-2. Find that machine's local IP (e.g. `192.168.1.10`)
-3. Open `http://[IP]:3000/game` on the display screen
-4. Open `http://[IP]:3000/presenter` on the host device
-5. Share `/buzz/team1` and `/buzz/team2` links with each team
+**خطوات الإعداد:**
+1. شغّل الخادم على جهاز واحد: `npm run dev` أو `npm start`
+2. ابحث عن عنوان IP الجهاز (مثل `192.168.1.10`)
+3. افتح `http://[IP]:3000/game` على شاشة العرض
+4. افتح `http://[IP]:3000/presenter` على جهاز المقدم
+5. وزّع روابط `/buzz/team1` و `/buzz/team2` على هواتف الفرق
 
-> **Note:** All sync is done via a lightweight in-memory API route — no database or external services required.
-
----
-
-## Gameplay
-
-### Setup
-1. Go to `/` and press **ابدأ اللعبة** (Start Game)
-2. Enter team names and number of rounds
-3. Press **ابدأ** (Start)
-
-### Each Turn
-1. Click any empty cell on the grid to select a letter
-2. The host reveals the question on the presenter panel
-3. The host can optionally push the question to the main display (`أظهر السؤال`)
-4. Teams buzz in from their phones — first press locks the buzzer
-5. Host awards the cell to the answering team, or skips if both fail
-6. If neither team can answer, the host can replace the question with `🔄 سؤال بديل`
-
-### Winning
-- The game uses BFS after every cell award to check for a winning path
-- A win screen with confetti plays automatically
+> **ملاحظة:** المزامنة الكاملة عبر API خفيفة في ذاكرة الخادم — لا قاعدة بيانات ولا خدمات خارجية.
 
 ---
 
-## Question Management
+## طريقة اللعب
 
-Visit `/admin` to manage the question database:
+### الإعداد
+1. افتح الصفحة الرئيسية `/` واضغط **ابدأ اللعبة**
+2. أدخل أسماء الفريقين وعدد الجولات
+3. اضغط **ابدأ**
 
-- Browse all questions filtered by Arabic letter
-- Add new questions with letter, category, difficulty, and answer
-- Edit or delete existing questions
-- Custom questions are stored in `localStorage` and persist across sessions
+### سير كل دور
+1. اضغط على أي خلية فارغة في الشبكة لاختيار حرف
+2. يعرض المقدم السؤال على لوحة التحكم
+3. يمكن للمقدم إظهار السؤال على الشاشة الرئيسية بزر **أظهر السؤال**
+4. الفرق تضغط الجرس من الهواتف — أول ضغطة تقفل الجرس
+5. المقدم يمنح الخلية للفريق المجيب أو يتخطى إذا أخطأ الجميع
+6. إذا عجز الفريقان، المقدم يستبدل السؤال بـ **🔄 سؤال بديل**
 
-The built-in database ships with **180+ questions** covering all 25 Arabic letters used in the grid.
+### الفوز
+- تفحص اللعبة تلقائياً وجود مسار فائز بعد كل منح خلية
+- تظهر شاشة احتفال بالمصادرات عند الفوز
 
 ---
 
-## Screenshots
+## إدارة الأسئلة
+
+افتح `/admin` لإدارة قاعدة بيانات الأسئلة:
+
+- تصفح جميع الأسئلة مرشحةً حسب الحرف
+- أضف أسئلة جديدة مع تحديد الحرف والتصنيف والصعوبة والإجابة
+- عدّل أو احذف الأسئلة القائمة
+- الأسئلة المخصصة تُحفظ في `localStorage` وتبقى عبر الجلسات
+
+تحتوي قاعدة البيانات المدمجة على **+180 سؤال** تغطي 25 حرفاً عربياً.
+
+---
+
+## لقطات الشاشة
 
 <table>
   <tr>
-    <td><img src="https://i.imgur.com/8NLODGN.png" alt="Game Board" /></td>
-    <td><img src="https://i.imgur.com/1NG5rvY.png" alt="Game Board 2" /></td>
+    <td><img src="https://i.imgur.com/8NLODGN.png" alt="لوحة اللعبة" /></td>
+    <td><img src="https://i.imgur.com/1NG5rvY.png" alt="لوحة اللعبة مع السؤال" /></td>
   </tr>
   <tr>
-    <td align="center"><em>Game Board</em></td>
-    <td align="center"><em>Game Board — Question Revealed</em></td>
+    <td align="center"><em>لوحة اللعبة</em></td>
+    <td align="center"><em>اللوحة — مع ظهور السؤال</em></td>
   </tr>
   <tr>
-    <td><img src="https://i.imgur.com/qj0tNWZ.png" alt="Home Setup" /></td>
-    <td><img src="https://i.imgur.com/NEQ0i6v.png" alt="Presenter Panel" /></td>
+    <td><img src="https://i.imgur.com/qj0tNWZ.png" alt="الصفحة الرئيسية" /></td>
+    <td><img src="https://i.imgur.com/NEQ0i6v.png" alt="لوحة المقدم" /></td>
   </tr>
   <tr>
-    <td align="center"><em>Home — Team Setup</em></td>
-    <td align="center"><em>Presenter Control Panel</em></td>
+    <td align="center"><em>الرئيسية — إعداد الفرق</em></td>
+    <td align="center"><em>لوحة تحكم المقدم</em></td>
   </tr>
   <tr>
-    <td><img src="https://i.imgur.com/Dpu4ZrO.png" alt="Presenter Panel 2" /></td>
-    <td><img src="https://i.imgur.com/g0wUNaV.png" alt="Team Buzzer" /></td>
+    <td><img src="https://i.imgur.com/Dpu4ZrO.png" alt="المقدم - المنح" /></td>
+    <td><img src="https://i.imgur.com/g0wUNaV.png" alt="جرس الفريق" /></td>
   </tr>
   <tr>
-    <td align="center"><em>Presenter — Answer &amp; Award</em></td>
-    <td align="center"><em>Team Buzzer (Mobile)</em></td>
+    <td align="center"><em>المقدم — الإجابة والمنح</em></td>
+    <td align="center"><em>جرس الفريق (الهاتف)</em></td>
   </tr>
   <tr>
-    <td><img src="https://i.imgur.com/4sOYymI.png" alt="Buzzer Pressed" /></td>
-    <td><img src="https://i.imgur.com/nKARSkG.png" alt="Admin Panel" /></td>
+    <td><img src="https://i.imgur.com/4sOYymI.png" alt="إدخال الاسم" /></td>
+    <td><img src="https://i.imgur.com/nKARSkG.png" alt="إدارة الأسئلة" /></td>
   </tr>
   <tr>
-    <td align="center"><em>Buzzer — Name Entry</em></td>
-    <td align="center"><em>Question Admin Panel</em></td>
+    <td align="center"><em>الجرس — إدخال اسم اللاعب</em></td>
+    <td align="center"><em>لوحة إدارة الأسئلة</em></td>
   </tr>
   <tr>
-    <td><img src="https://i.imgur.com/OZgkhUr.png" alt="Win Screen" /></td>
-    <td><img src="https://i.imgur.com/iMNwpoM.png" alt="Tiebreaker" /></td>
+    <td><img src="https://i.imgur.com/OZgkhUr.png" alt="شاشة الفوز" /></td>
+    <td><img src="https://i.imgur.com/iMNwpoM.png" alt="الجولة الفاصلة" /></td>
   </tr>
   <tr>
-    <td align="center"><em>Win Screen</em></td>
-    <td align="center"><em>Tiebreaker Round</em></td>
+    <td align="center"><em>شاشة الفوز</em></td>
+    <td align="center"><em>الجولة الفاصلة</em></td>
   </tr>
 </table>
 
 ---
 
-## License
+## الرخصة
 
-This project is intended for educational and entertainment use.
+هذا المشروع مخصص للاستخدام التعليمي والترفيهي.
 
 ---
 
 <div align="center">
-  Made with ❤️ for Arabic trivia nights &nbsp;•&nbsp; <strong>حروف مع الاهدل</strong>
+  صُنع بـ ❤️ لليالي المعرفة العربية &nbsp;•&nbsp; <strong>حروف مع الاهدل</strong>
 </div>
